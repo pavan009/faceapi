@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>personPage</title>
+    <style>
+       /* Style the form container */
+       .form-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      /* Style the input field */
+      .input-field {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+        margin-right: 10px;
+      }
+
+      /* Style the submit button */
+      .submit-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      /* Change the button color on hover */
+      .submit-button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+        <form class="form-container" action="{{ url_for('personGroupID') }}" method="post">
+            <label>PERSON_GROUP_ID: </label>
+            <input class="input-field" type="text" name="PERSON_GROUP_ID" placeholder="Enter Unique PERSON_GROUP_ID"><br>
+            <!-- <label>TARGET_PERSON_GROUP_ID: </label>
+            <input class="input-field" type="text" name="TARGET_PERSON_GROUP_ID" placeholder="TARGET_PERSON_GROUP_ID"> -->
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+  </body>
+</html>
+
